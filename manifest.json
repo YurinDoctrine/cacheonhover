@@ -1,0 +1,23 @@
+{
+  "name": "cacheonhover",
+  "version": "1.1.0",
+  "manifest_version": 2,
+  "description": "Get instant responses by after click it",
+  "author": "Yurin Doctrine",
+  "homepage_url": "https://github.com/YurinDoctrine/cacheonhover",
+  "browser_action": {
+    "default_title": "cacheonhover"
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["cacheonhover.js"],
+    "persistent": true,
+    "all_frames": true
+  }
+}
