@@ -16,7 +16,7 @@
     "https://*/*"
   ],
   "background": {
-    "scripts": ["cacheonhover.js"],
+    "js": ["script.js"],
     "persistent": true,
     "all_frames": true
   }
