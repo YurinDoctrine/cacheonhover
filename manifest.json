@@ -1,7 +1,7 @@
 {
   "name": "cacheonhover",
-  "version": "1.2.0",
-  "manifest_version": 3,
+  "version": "1.1.0",
+  "manifest_version": 2,
   "description": "Get instant responses by after click links",
   "author": "Yurin Doctrine",
   "homepage_url": "https://github.com/YurinDoctrine/cacheonhover",
