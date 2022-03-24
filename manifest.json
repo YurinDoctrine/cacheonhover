@@ -5,13 +5,11 @@
   "description": "Get instant responses by after click links",
   "author": "Yurin Doctrine",
   "homepage_url": "https://github.com/YurinDoctrine/cacheonhover",
-  "browser_action": {
-    "default_title": "cacheonhover"
-  },
-  "host_permissions": [
+  "permissions": [
     "tabs",
-    "webRequest",
-    "webRequestBlocking",
+    "webRequest"
+  ],
+  "host_permissions": [
     "http://*/*",
     "https://*/*"
   ],

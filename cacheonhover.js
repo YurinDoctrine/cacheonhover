@@ -11,7 +11,6 @@ const allowExternalLinks = 'cohAllowExternalLinks' in document.body.dataset
 const useWhitelist = 'cohWhitelist' in document.body.dataset
 const mousedownShortcut = 'cohMousedownShortcut' in document.body.dataset
 const DELAY_TO_NOT_BE_CONSIDERED_A_TOUCH_INITIATED_ACTION = 1111
-
 let delayOnHover = 55
 let useMousedown = false
 let useMousedownOnly = false
