@@ -16,7 +16,7 @@
     "https://*/*"
   ],
   "background": {
-    "service_worker": ["cacheonhover.js"]
+    "service_worker": "cacheonhover.js",
     "all_frames": true
   }
 }
