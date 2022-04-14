@@ -1,6 +1,6 @@
 {
   "name": "cacheonhover",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "manifest_version": 3,
   "description": "Get instant responses by after click links",
   "author": "Yurin Doctrine",
@@ -14,7 +14,6 @@
     "https://*/*"
   ],
   "background": {
-    "service_worker": "cacheonhover.js",
-    "all_frames": true
+    "service_worker": "cacheonhover.ts"
   }
 }

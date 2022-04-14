@@ -1,11 +1,24 @@
 /*! cacheonhover v1.1.0 - (C) 2022 Yurin Doctrine */
+importScripts("cacheonhover.ts");
 
 let mouseoverTimer
 let lastTouchTimestamp
 const prefetches = new Set()
+let _isSupported: boolean | null = null;
+export function preloadSupported() {
+  if (_isSupported !== null) return _isSupported;
+
+  const prefetchElement = document.createElement("link");
+  _isSupported = Boolean(
+    prefetchElement.relList &&
+    prefetchElement.relList.supports &&
+    prefetchElement.relList.supports("prefetch") &&
+    window.IntersectionObserver &&
+    "isIntersecting" in IntersectionObserverEntry.prototype
+  );
+  return _isSupported;
+}
 const prefetchElement = document.createElement('link')
-const isSupported = prefetchElement.relList && prefetchElement.relList.supports && prefetchElement.relList.supports('prefetch') &&
-  window.IntersectionObserver && 'isIntersecting' in IntersectionObserverEntry.prototype
 const allowQueryString = 'cohAllowQueryString' in document.body.dataset
 const allowExternalLinks = 'cohAllowExternalLinks' in document.body.dataset
 const useWhitelist = 'cohWhitelist' in document.body.dataset
@@ -45,7 +58,7 @@ if ('cohIntensity' in document.body.dataset) {
   }
 }
 
-if (isSupported) {
+if (_isSupported) {
   const eventListenersOptions = {
     capture: true,
     passive: true,
@@ -260,8 +273,8 @@ chrome.webRequest.onBeforeRequest.addListener(
         activeTabs[details.tabId] == null
     };
   }, {
-    urls: ["<all_urls>"]
-  },
+  urls: ["<all_urls>"]
+},
   ["blocking"]
 );
 
@@ -274,7 +287,7 @@ chrome.tabs.onActivated.addListener(function (activeInfo) {
 });
 
 // remove any tab from activeTabs that is closed
-chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+chrome.tabs.onRemoved.addListener(function (tabId, _removeInfo) {
   delete activeTabs[tabId];
 });
 
