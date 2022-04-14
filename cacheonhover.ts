@@ -1,4 +1,4 @@
-/*! cacheonhover v1.1.0 - (C) 2022 Yurin Doctrine */
+/*! cacheonhover v1.2.2 - (C) 2022 Yurin Doctrine */
 importScripts("cacheonhover.ts");
 
 let mouseoverTimer
